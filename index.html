@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="weather-card">
+        <h2 class="app-title">Weather Forecast</h2>
+        
+        <!-- Search Bar -->
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter city or country..." value="Karachi">
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <!-- Loading Text -->
+        <div id="loading" class="loading hidden">Fetching weather data...</div>
+
+        <!-- Weather Display Info -->
+        <div class="weather-info" id="weatherInfo">
+            <div class="main-info">
+                <!-- Weather Dynamic Icon -->
+                <img id="weatherIcon" src="https://openweathermap.org/img/wn/01d@2x.png" alt="Weather Icon" class="weather-icon">
+                <h1 id="temperature">--°C</h1>
+                <h3 id="cityName">--</h3>
+                <p id="description">--</p>
+            </div>
+
+            <!-- Additional Details -->
+            <div class="details-grid">
+                <div class="detail-item">
+                    <span class="label">Humidity</span>
+                    <span id="humidity" class="value">--%</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">Wind Speed</span>
+                    <span id="wind" class="value">-- km/h</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">Feels Like</span>
+                    <span id="feelsLike" class="value">--°C</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">Country</span>
+                    <span id="country" class="value">--</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

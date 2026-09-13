@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+/* Container Glassmorphism Design */
+.weather-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 25px;
+    width: 100%;
+    max-width: 420px;
+    color: #fff;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.app-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 15px;
+    width: 100%;
+}
+
+.search-box input::placeholder {
+    color: #ddd;
+}
+
+.search-box button {
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    background: #00d2ff;
+    color: #111;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    white-space: nowrap;
+}
+
+.search-box button:hover {
+    background: #0086ad;
+    color: #fff;
+}
+
+.loading {
+    margin: 20px 0;
+    font-style: italic;
+    color: #00d2ff;
+}
+
+.hidden {
+    display: none;
+}
+
+.weather-icon {
+    width: 100px;
+    height: 100px;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.4));
+}
+
+#temperature {
+    font-size: 50px;
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+#cityName {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+#description {
+    font-size: 15px;
+    color: #ccc;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detail-item .label {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 3px;
+}
+
+.detail-item .value {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* ================================================= */
+/* MEDIA QUERIES FOR ALL DISPLAY SIZES (RESPONSIVE) */
+/* ================================================= */
+
+/* 1. Small Mobile Display (Phones under 400px width) */
+@media screen and (max-width: 400px) {
+    .weather-card {
+        padding: 18px;
+    }
+
+    .app-title {
+        font-size: 18px;
+    }
+
+    .search-box {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .search-box button {
+        width: 100%;
+        border-radius: 25px;
+    }
+
+    #temperature {
+        font-size: 40px;
+    }
+
+    .weather-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .details-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .detail-item .value {
+        font-size: 14px;
+    }
+}
+
+/* 2. Tablet & iPad Display (401px - 768px width) */
+@media screen and (min-width: 401px) and (max-width: 768px) {
+    .weather-card {
+        max-width: 380px;
+        padding: 22px;
+    }
+}
+
+/* 3. Large Laptop & Desktop Display (769px and above) */
+@media screen and (min-width: 769px) {
+    .weather-card {
+        max-width: 480px;
+        padding: 35px;
+    }
+
+    .app-title {
+        font-size: 26px;
+    }
+
+    #temperature {
+        font-size: 60px;
+    }
+
+    .details-grid {
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .detail-item .value {
+        font-size: 18px;
+    }
+}
